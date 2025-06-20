@@ -1,0 +1,257 @@
+/* ================== navbar styling ==================== */
+#navbar{
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
+    padding: 0 20px;
+    backdrop-filter: blur(10px);
+    border-bottom: 0.1px solid rgba(150,150,150,0.5);
+
+}
+
+/* ================== navLeft styling ==================== */
+#navLeft{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* ================== Logo styling ==================== */
+#navLogo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    cursor: default;
+}
+
+#logoIcon{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoIcon{
+    font-family: var(--logo-font);
+    font-weight: 500;
+    padding: 0 5px;
+    border: none;
+    border-radius: 5px;
+    color: rgba(0,0,0,0.7);
+}
+#navLogo #name{
+    font-family: var(--heading-font);
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--white);
+    font-size: 17px;
+}
+
+/* ================== NavMenu styling ==================== */
+#navMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navLinks{
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+#navLinks li{
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+#navLinks li::after{
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    height: 5%;
+    width: 0;
+    right: 50%;
+    transform: translateX(50%); /* centering the element */
+    border: none;
+    border-radius: 20px;
+    background-color: var(--lime);
+    transform-origin: center;
+    transition: all ease-in-out 0.3s;
+}
+
+#navLinks li:hover::after{
+    width: 110%;
+}
+
+#navLinks li a{
+    align-self: center;
+    font-family: var(--text-font);
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(200,200,200,0.7);
+    transition: all ease-in-out 0.3s;
+}
+
+#navLinks li a:hover{
+    color: var(--white);
+}
+
+/* ================== navRight styling ==================== */
+#navRight{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
+    flex-shrink: 0;
+    align-items: center;
+
+}
+
+/* ================== NavButton styling ==================== */
+.primary-btn{
+    font-family: var(--text-font);
+    font-size: 16px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    color: var(--black);
+    background-color: var(--lime);
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.primary-btn:hover{
+    background-color: var(--hover-lime);
+}
+
+.primary-btn:focus{
+    outline: 1px solid var(--lime);
+    outline-offset: 2px;
+}
+
+/* ================== MenuIcons styling ==================== */
+#navRight img{
+    margin-left: 5px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+#navRight img:hover{
+    transform: scale(1.1);
+}
+
+#menu-icon{
+    display: none;
+}
+
+#cross-icon{
+    display: none;
+}
+
+/* ================== sideBar styling ==================== */
+#sideBar{
+    background-color: rgba(20,20,20,1);
+    position: absolute;
+    margin-top: 71px;
+    right: 0;
+    padding: 40px 40px 40px 0;
+    width: 70%;
+    height: calc(100vh - 71px);
+    z-index: 999;
+    display: none;
+}
+
+#sideBar #sideBarLinks{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: fit-content;
+    gap: 15px;
+    padding: none;
+}
+#sideBar #sideBarLinks li{
+    gap: 10px;
+    background-color: transparent;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 0 20px 20px;
+    border-bottom: 0.1px solid rgba(200,200,200,0.5);
+    border-radius: 12px;
+    list-style: none;
+
+}
+
+#sideBar #sideBarLinks li a{
+    padding: none;
+    font-family: var(--text-font);
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(200,200,200,0.7);
+    transition: all ease-in-out 0.3s;
+}
+
+
+
+/* ================== media screens ==================== */
+
+/* Tablet */
+@media screen and (max-width: 991px){
+
+    #navLinks{
+        display: none;
+    }
+    #menu-icon{
+        display: flex;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 478px){
+
+    #navLinks{
+        display: none;
+    }
+    #menu-icon{
+        display: flex;
+    }
+    #sideBar{
+        width: 100%;
+    }
+}
+
+

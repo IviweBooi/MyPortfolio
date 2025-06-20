@@ -1,0 +1,28 @@
+/* ==================== Import Fonts ======================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    /* colors */
+    --white: rgba(255, 255, 255, 1);
+    --black: rgba(0, 0, 0, 1);
+    --lime: rgba(179, 270, 80, 1);
+    --hover-lime: rgba(130, 230, 40, 1);
+    --silver: rgba(240, 240, 240, 1);
+
+    /* typography */
+    --heading-font: 'Syne', sans-serif;
+    --text-font: 'Inter', sans-serif;
+    --logo-font: 'Monoton', sans-serif;
+}
+
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
