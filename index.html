@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="navbar.css"/>
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/f88cd4a022.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <!-- NavBar -->
@@ -22,7 +23,7 @@
             </div>
             <div id="navMenu">
                 <ul id="navLinks">
-                    <li>
+                    <li id="projects-dd">
                         <a href="#" id="projects">Projects</a>
                     </li>
                     <li>
@@ -39,10 +40,11 @@
         </div>
         <div id="navRight">
             <button type="button" class="primary-btn" id="say-hi-btn">Say hi</button>
-            <img id="menu-icon" src="assets/menu.svg" height="55"/>
-            <img id="cross-icon" src="assets/cross.svg" height="30"/>
+            <button onclick="viewSideBar()" type="button" style="padding: 0;background-color: transparent;border: none;"><img id="menu-icon" src="assets/menu.svg" height="55"/></button>
+            <button onclick="viewSideBar()" type="button" style="padding: 0;background-color: transparent;border: none;"><img id="cross-icon" src="assets/cross.svg" height="25"/></button>
         </div>
     </nav>
+    <!-- sideBar -->
     <div id="sideBar">
         <ul id="sideBarLinks">
             <li>
@@ -63,5 +65,103 @@
             </li>
         </ul>
     </div>
+    <!-- projects dropdown menu -->
+    <div id="projects-dropdown">
+        <div id="projects-left-div">
+            <div class="title-div">
+                <h2>PERSONAL BUILDS</h2>
+            </div>
+
+            <div class="title-div">
+                <h2>TECH STACK</h2>
+            </div>
+
+            <div class="title-div">
+                <h2>ABOUT ME</h2>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="browserApps-icon" src="assets/apps-icon.svg" height="20"/>
+                    <h2>Web apps</h2>
+                </div>
+                <p>Dive into my web creations.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="languages-icon" src="assets/languages-icon.svg" height="20"/>
+                    <h2>Languages</h2>
+                </div>
+                <p>My code playground.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="story-icon" src="assets/myStory-icon.svg" height="20"/>
+                    <h2>My story</h2>
+                </div>
+                <p>How I got started.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="UI-icon" src="assets/pen-icon.svg" height="20"/>
+                    <h2>UI experiments</h2>
+                </div>
+                <p>Fresh takes on interface design.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="frameworks-icon" src="assets/framework-icon.svg" height="20"/>
+                    <h2>Frameworks</h2>
+                </div>
+                <p>Frameworks I use.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="skills-icon" src="assets/skills.svg" height="20"/>
+                    <h2>Skills</h2>
+                </div>
+                <p>What I do best.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="games-icon" src="assets/games-icon.svg" height="21"/>
+                    <h2>Mini games</h2>
+                </div>
+                <p>Try out playful side projects.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="tools-icon" src="assets/tools-icon.svg" height="17"/>
+                    <h2>Tools</h2>
+                </div>
+                <p>My go-to dev gear.</p>
+            </div>
+
+            <div class="content">
+                <div class="heading-div">
+                    <img id="contact-icon" src="assets/contacts.svg" height="18"/>
+                    <h2>Contact</h2>
+                </div>
+                <p>Let's chat!</p>
+            </div>
+        </div>
+        <div id="projects-right-div">
+            <h2>Code. Design.<br/>Repeat. Dream big.</h2>
+            <p>Student coder.Design fan.Always curious.</p>
+            <button id="see-work-btn" class="secondary-btn">
+                See work
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <!-- javaScript -->
+    <script src="navbar.js"/>
 </body>
 </html>

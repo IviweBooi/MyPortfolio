@@ -16,7 +16,6 @@
     align-items: stretch;
     padding: 0 20px;
     backdrop-filter: blur(10px);
-    border-bottom: 0.1px solid rgba(150,150,150,0.5);
 
 }
 
@@ -87,6 +86,7 @@
     padding: 0;
 }
 
+
 #navLinks li{
     align-self: stretch;
     background-color: transparent;
@@ -129,6 +129,7 @@
 
 /* ================== navRight styling ==================== */
 #navRight{
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -181,7 +182,7 @@
 
 /* ================== sideBar styling ==================== */
 #sideBar{
-    background-color: rgba(20,20,20,1);
+    background-color: rgba(20,20,20,0.7);
     position: absolute;
     margin-top: 71px;
     right: 0;
@@ -190,6 +191,7 @@
     height: calc(100vh - 71px);
     z-index: 999;
     display: none;
+    backdrop-filter: blue(10px);
 }
 
 #sideBar #sideBarLinks{
@@ -199,7 +201,7 @@
     align-items: stretch;
     width: 100%;
     height: fit-content;
-    gap: 15px;
+    gap: 5px;
     padding: none;
 }
 #sideBar #sideBarLinks li{
@@ -224,6 +226,145 @@
     color: rgba(200,200,200,0.7);
     transition: all ease-in-out 0.3s;
 }
+
+
+/* ================== projects dropdown==================== */
+#projects-dropdown{
+    background-color: var(--white);
+    position: absolute;
+    z-index: 999;
+    top: 71px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px;
+    border: none;
+    border-radius: 18px;
+    display: none;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    gap: 80px;
+    transition: all ease-in-out 0.1s;
+
+}
+
+
+/* ===== projects left div ===== */
+#projects-left-div{
+    background-color: transparent;
+    height: 250px;
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+
+.title-div{
+    background-color: transparent;
+}
+.title-div h2{
+    font-family: var(--heading-font);
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.5);
+}
+
+.content{
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+.content:hover{
+    background-color: rgba(179, 270, 80, 0.2);
+}
+
+.content .heading-div{
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.content .heading-div h2{
+    font-family: var(--text-font);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
+    padding: 0;
+}
+.content p{
+    padding-left: 28px;
+    color: rgba(0,0,0,0.5);
+    font-family: var(--text-font);
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ===== projects right div ===== */
+#projects-right-div{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    border: none;
+    padding: 40px;
+    border-radius: 12px;
+    height: 250px;
+    transition: all ease-in-out 0.3s;
+}
+
+#projects-right-div:hover{
+    transform: translateY(4px);
+}
+#projects-right-div h2{
+    font-family: var(--heading-font);
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--white);
+    margin: 0;
+}
+
+#projects-right-div p{
+    font-family: var(--text-font);
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0;
+}
+
+.secondary-btn{
+    font-family: var(--text-font);
+    font-size: 16px;
+    padding: 16px 24px;
+    border: 1px solid var(--silver);
+    border-radius: 12px;
+    color: var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.secondary-btn:hover{
+    transform: scale(1.05);
+}
+
+.secondary-btn:focus{
+    outline: 1px solid var(--lime);
+    outline-offset: 2px;
+}
+
 
 
 
