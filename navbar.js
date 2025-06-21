@@ -14,8 +14,8 @@ function viewSideBar(){
     }
 }
 
-
-const hoverTarget = document.querySelector('#projects-dd');
+// projects dropdown
+const dropdownTarget = document.querySelector('#projects-dd');
 const hiddenElement = document.querySelector('#projects-dropdown');
 
 function fadeIn(element) {
@@ -33,29 +33,43 @@ function fadeIn(element) {
     }, 50); // Adjust speed of fade in
 }
 
-function fadeOut(element) {
-    let opacity = 1;
+
+dropdownTarget.addEventListener('click', () => {
+    if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+        fadeIn(hiddenElement); // Show the element with fade in
+    } else {
+        hiddenElement.style.display = 'none'; // Hide the element with fade out
+    }
+});
+
+//help dropdown
+const dropdownTarget2 = document.querySelector('#help-dd');
+const hiddenElement2 = document.querySelector('#help-menu-dd');
+
+function fadeIn(element) {
+    element.style.display = 'flex'; // Show the element
+    let opacity = 0;
     element.style.opacity = opacity;
 
     const interval = setInterval(() => {
-        if (opacity > 0) {
-            opacity -= 0.1; // Decrease opacity
+        if (opacity < 1) {
+            opacity += 0.1; // Increase opacity
             element.style.opacity = opacity;
         } else {
-            element.style.display = 'none'; // Hide when fully transparent
-            clearInterval(interval); // Stop when fully hidden
+            clearInterval(interval); // Stop when fully visible
         }
-    }, 50); // Adjust speed of fade out
+    }, 50); // Adjust speed of fade in
 }
 
-hoverTarget.addEventListener('mouseenter', () => {
-    fadeIn(hiddenElement); // Show the element with fade in
+
+dropdownTarget2.addEventListener('click', () => {
+    if (hiddenElement2.style.display === 'none' || hiddenElement2.style.display === '') {
+        fadeIn(hiddenElement2); // Show the element with fade in
+    } else {
+        hiddenElement2.style.display = 'none'; // Hide the element with fade out
+    }
 });
 
-hiddenElement.addEventListener('mouseenter', () => {
-hiddenElement.style.display = 'flex'; // Show the element
-});
 
-hiddenElement.addEventListener('mouseleave', () => {
-hiddenElement.style.display = 'none'; // Hide the element
-});
+
+

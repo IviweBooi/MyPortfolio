@@ -213,7 +213,7 @@
     position: relative;
     padding: 20px 0 20px 20px;
     border-bottom: 0.1px solid rgba(200,200,200,0.5);
-    border-radius: 12px;
+    border-radius: 0px;
     list-style: none;
 
 }
@@ -363,6 +363,46 @@
 .secondary-btn:focus{
     outline: 1px solid var(--lime);
     outline-offset: 2px;
+}
+
+/* ================== help dropdown ==================== */
+#help-menu-dd{
+    background-color: var(--white);
+    position: absolute;
+    padding: 10px 15px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    top: 71px;
+    left: 345px;
+    border: none;
+    border-radius: 12px;
+    transition: all ease-in-out 0.1s;
+
+}
+
+#help-menu-dd div{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    gap: 5px;
+    border: none;
+    border-radius: 12px;
+    padding-right: 5px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+#help-menu-dd div:hover{
+    background-color: rgba(130, 230, 40, 0.2);
+}
+
+
+#help-menu-dd div p{
+    font-family: var(--text-font);
+    font-size: 14px;
+    margin: 10px;
 }
 
 
