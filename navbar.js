@@ -62,12 +62,50 @@ function fadeIn(element) {
 }
 
 
+
 dropdownTarget2.addEventListener('click', () => {
     if (hiddenElement2.style.display === 'none' || hiddenElement2.style.display === '') {
         fadeIn(hiddenElement2); // Show the element with fade in
     } else {
         hiddenElement2.style.display = 'none'; // Hide the element with fade out
     }
+});
+
+
+// image landing page animation
+const image = document.querySelector('#image');
+
+image.addEventListener('mousemove', (event) => {
+    const rect = image.getBoundingClientRect();
+    const x = event.clientX - rect.left; // X coordinate within the image
+    const y = event.clientY - rect.top;  // Y coordinate within the image
+
+    const xRotation = ((y / rect.height) - 0.5) * 30; // Calculate X rotation
+    const yRotation = ((x / rect.width) - 0.5) * -30; // Calculate Y rotation
+
+    image.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+});
+
+image.addEventListener('mouseleave', () => {
+    image.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset rotation
+});
+
+
+const imgElement = document.querySelector('.img');
+
+imgElement.addEventListener('mousemove', (event) => {
+    const rect = imgElement.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left; // X coordinate within the image
+    const mouseY = event.clientY - rect.top;  // Y coordinate within the image
+
+    const xRotation = ((mouseY / rect.height) - 0.5) * 30; // Calculate X rotation
+    const yRotation = ((mouseX / rect.width) - 0.5) * -30; // Calculate Y rotation
+
+    imgElement.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+});
+
+imgElement.addEventListener('mouseleave', () => {
+    imgElement.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset rotation
 });
 
 

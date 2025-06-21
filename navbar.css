@@ -182,9 +182,9 @@
 
 /* ================== sideBar styling ==================== */
 #sideBar{
-    background-color: rgba(20,20,20,0.7);
-    position: absolute;
-    margin-top: 71px;
+    background-color: rgba(20,20,20,1);
+    position: fixed;
+    margin-top: -1px;
     right: 0;
     padding: 40px 40px 40px 0;
     width: 70%;
@@ -221,7 +221,7 @@
 #sideBar #sideBarLinks li a{
     padding: none;
     font-family: var(--text-font);
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
     color: rgba(200,200,200,0.7);
     transition: all ease-in-out 0.3s;
@@ -280,7 +280,7 @@
     cursor: pointer;
 }
 .content:hover{
-    background-color: rgba(179, 270, 80, 0.2);
+    background-color: rgba(179, 270, 80, 0.4);
 }
 
 .content .heading-div{
@@ -370,6 +370,7 @@
     background-color: var(--white);
     position: absolute;
     padding: 10px 15px;
+    z-index: 999;
     display: none;
     flex-direction: column;
     gap: 10px;
@@ -395,7 +396,7 @@
     cursor: pointer;
 }
 #help-menu-dd div:hover{
-    background-color: rgba(130, 230, 40, 0.2);
+    background-color: rgba(130, 230, 40, 0.4);
 }
 
 
