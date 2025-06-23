@@ -91,22 +91,69 @@ image.addEventListener('mouseleave', () => {
 });
 
 
-const imgElement = document.querySelector('.img');
+// second page image
+const imgElements = document.querySelectorAll('.img');
 
-imgElement.addEventListener('mousemove', (event) => {
-    const rect = imgElement.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left; // X coordinate within the image
-    const mouseY = event.clientY - rect.top;  // Y coordinate within the image
+imgElements.forEach((imgElement) => {
+    imgElement.addEventListener('mousemove', (event) => {
+        const rect = imgElement.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left; // X coordinate within the image
+        const mouseY = event.clientY - rect.top;  // Y coordinate within the image
 
-    const xRotation = ((mouseY / rect.height) - 0.5) * 30; // Calculate X rotation
-    const yRotation = ((mouseX / rect.width) - 0.5) * -30; // Calculate Y rotation
+        const xRotation = ((mouseY / rect.height) - 0.5) * 30; // Calculate X rotation
+        const yRotation = ((mouseX / rect.width) - 0.5) * -30; // Calculate Y rotation
 
-    imgElement.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+        imgElement.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+    });
+
+    imgElement.addEventListener('mouseleave', () => {
+        imgElement.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset rotation
+    });
 });
 
-imgElement.addEventListener('mouseleave', () => {
-    imgElement.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset rotation
+
+
+// second page
+
+const buttons = document.querySelectorAll('.sec-page-btn');
+    const contents = {
+        skills: document.getElementById('skills-content'),
+        projects: document.getElementById('projects-content'),
+        about: document.getElementById('about-content')
+};
+
+function showContent(contentId) {
+    // Hide all content
+    for (const key in contents) {
+        contents[key].style.display = 'none';
+    }
+
+    // Show the selected content
+    contents[contentId].style.display = 'grid';
+
+    // Remove active class from all buttons
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Set active class on the clicked button
+    const activeButton = document.getElementById(contentId + '-btn');
+    activeButton.classList.add('active');
+}
+
+// Event listeners for buttons
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const contentId = button.id.replace('-btn', '');
+        showContent(contentId);
+    });
 });
+
+// Initialize the page with Skills content
+showContent('skills');
+
+
+
 
 
 

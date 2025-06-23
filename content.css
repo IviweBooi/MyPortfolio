@@ -128,19 +128,34 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    animation: autoShow both;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShow{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.2);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .sec-page-btn{
     font-family: var(--text-font);
     background-color: inherit;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
     color: rgba(115, 121, 125, 1);
     padding: 12px 80px;
     border: none;
     border-bottom: 2px solid rgba(115, 121, 125, 0.4);
     cursor: pointer;
     transition: all ease-in-out 0.3s;
+    animation: autoShow both;
+    animation-timeline: view(98% 0%);
 }
 .sec-page-btn:hover{
     color: rgba(100, 111, 115, 1);
@@ -148,13 +163,20 @@
 
 }
 
-#lower-div{
+.lower-div{
     background-color: transparent;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: none;
+    grid-template-columns: 1fr 1.6fr;
     gap: 20px;
     grid-template-rows: 1fr 2fr 2fr;
     width: 100%;
+    animation: autoShow both;
+    animation-timeline: view(98% 0%);
+}
+.active {
+    color: black;
+    background-color: transparent;
+    border-color: black;
 }
 
 #second-page .title-div{
@@ -165,13 +187,13 @@
 #second-page .title-div h1{
     font-family: var(--heading-font);
     font-weight: 300;
-    font-size: 45px;
+    font-size: 40px;
 }
 
-#lower-div .left-div{
+.lower-div .left-div{
     background-color: var(--white);
     padding: 40px;
-    border: none;
+    border: 1px solid rgba(0,0,0,0.3);
     border-radius: 12px;
     grid-row: span 2;
     display: flex;
@@ -179,21 +201,15 @@
     justify-content: start;
     align-items: start;
     position: relative;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
     transition: all ease-in-out 0.3s;
-    animation: growShrink 2s infinite;
-}
-@keyframes growShrink{
-    0%{transform: scale(1);}
-    50%{transform: scale(1.02);}
-    100%{transform: scale(1);}
 }
 
-#lower-div .left-div img{
+.lower-div .left-div img{
     margin: 0;
 }
 
-#lower-div .left-div h2{
+.lower-div .left-div h2{
     color: var(--black);
     position: relative;
     text-align: left;
@@ -204,18 +220,18 @@
     margin: 20px 0;
 }
 
-#lower-div .left-div p{
+.lower-div .left-div p{
     color: rgba(0,0,0,0.5);
     position: relative;
     text-align: left;
     font-family: var(--text-font);
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
     margin: 0;
 }
 
-#lower-div .left-div button{
+.lower-div .left-div button{
     position: absolute;
     bottom: 40px;
     padding: 20px 40px;
@@ -228,23 +244,68 @@
     transition: all ease-in-out 0.3s;
 }
 
-#lower-div .left-div button:hover{
+.lower-div .left-div button:hover{
     transform: scale(0.95);
 }
 
-#lower-div .img{
+
+.lower-div .img{
     grid-row: span 2;
     padding: 0;
     border:none;
     border-radius: 12px;
     width: 100%;
-    height: auto;
+    height: 100%;
     cursor: default;
 }
 
+/* ================== page 3 ==================== */
 
+#page-3{
+    background-color: var(--silver);
+    padding: 80px 20px;
+}
 
+#page-3 #grid-div{
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
+#grid-div .card{
+    background-color: transparent;
+    border: none;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    cursor: pointer;
+    padding: 10px 10px 0 10px;
+    transition: all ease-in-out 0.3s;
+}
+#grid-div .card:hover{
+    transform: scale(0.97);
+    opacity: 0.7;
+}
+
+#grid-div .card img{
+    width: 100%;
+    margin: 0;
+}
+
+#grid-div .card .card-body h2{
+    color: var(--black);
+    font-family: var(--heading-font);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+#grid-div .card .card-body p{
+    color: var(--black);
+    font-family: var(--text-font);
+    font-weight: 400;
+    margin: 0;
+}
 
 
 
@@ -264,12 +325,47 @@
         margin-bottom: 15px;
     }
 
+    #upper-div .sec-page-btn{
+        font-size: 14px;
+        font-weight: 400;
+        padding: 10px 50px;
+    }
+    #skills-content .title-div h1{
+        font-size: 38px;
+    }
+
+    .lower-div{
+        gap: 20px;
+        grid-template-rows: 1fr 2fr 1.5fr;
+    }
+
+
+    #page-3 #grid-div{
+        row-gap: 20px;
+        column-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
 }
 
 
 
 /* Mobile */
 @media screen and (max-width: 478px){
+    #landing-page{
+        padding: 70px 0px;
+
+    }
+    #upper-div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: start;
+        align-items: stretch;
+        margin-bottom: 20px;
+        align-self: stretch;
+    }
      #box{
         flex-direction: column;
     }
@@ -307,6 +403,31 @@
         gap: 10px;
         padding: 0;
         margin: 0;
+    }
+
+    #second-page .title-div h1{
+        font-size: 30px;
+    }
+
+    .lower-div .left-div{
+        grid-column: span 2;
+    }
+    .lower-div .left-div .btn{
+        right: 40px;
+    }
+
+    .lower-div .left-div p{
+        font-size: 13px;
+    }
+
+    .lower-div  .img{
+        grid-column: span 2;
+    }
+
+    #page-3 #grid-div{
+        row-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+
     }
 
 }
