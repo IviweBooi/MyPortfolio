@@ -156,5 +156,3 @@ showContent('skills');
 
 
 
-
-
